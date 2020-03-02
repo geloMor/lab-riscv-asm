@@ -6,4 +6,4 @@
 
 (N = 3, M = 2)
 
-Пример выполнения доступен в репозитории https://github.com/sc-itmo-socdes-sp20/lab-riscv-asm
+https://canvas.instructure.com/courses/1819197/assignments/13690542
