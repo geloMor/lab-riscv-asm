@@ -1,2 +1,2 @@
 # lab-riscv-asm
-student risc-v lab project
+variant num. 8
