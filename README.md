@@ -8,7 +8,7 @@
 
 https://canvas.instructure.com/courses/1819197/assignments/13690542
 
-
+C-code
 ```
 int N[3]={11, 2, 34};
 int M[2]={5, 1}
@@ -20,6 +20,8 @@ int main(void) {
 printf("Result is %d.", multvec(N[1], N[2], N[3], M[1], M[2]))
 }
 ```
+
+rv32I assembler code
 ```
 # task initialization 
 addi t0 x0 2 # N1
@@ -39,25 +41,25 @@ add t1 zero zero
 add t2 zero zero
 
 Loop1: # mult t0 a0 a3
-  beq a0, zero, End1
+  beq a0, zero, Endloop1
   addi a0, a0, -1
   add t0, a3, t0
   j Loop1
-End1:
+Endloop1:
 
 Loop2: # mult t1 a1 a4
-  beq a1, zero, End2
+  beq a1, zero, Endloop2
   addi a1, a1, -1
   add t1, a4, t1
   j Loop2
-End2:
+Endloop2:
 
 Loop3: # mult t2 a2 zero
-  beq a2, zero, End3
+  beq a2, zero, Endloop3
   addi a2, a2, -1
   add t2, zero, t2
   j Loop3
-End3:
+Endloop3:
 
 add a1 t0 zero
 add a1 t1 a1
@@ -65,6 +67,6 @@ add a1 t2 a1
 
 j endmultvec
 endmultvec:
-addi a0 zero 17
+addi a0 zero 1
 ecall
 ```
